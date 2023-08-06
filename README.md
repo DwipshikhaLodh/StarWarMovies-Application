@@ -23,6 +23,7 @@
 
 
 ### Features of the Application
+- Responsive application
 - View all the movies in the *Home* section
 - Can Favourite any of the movies from *Home* section and view them on the *Favourite* page
 - Can remove the movies according to our desire from the *Favourite* page which we don't want to keep
