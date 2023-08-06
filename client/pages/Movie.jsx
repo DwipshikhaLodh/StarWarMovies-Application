@@ -31,13 +31,15 @@ function Movie() {
 
     return (
         <div className={ darkTheme === true? "bg-gradient-to-br from-blue-950 to-black p-16" : " bg-gradient-to-br from-white to-sky-200 p-16"}>
+
             <div className="flex flex-col justify-start items-end">
                 <button className={darkTheme === true? "text-xl text-white" : "text-xl text-black"} onClick={setTheme}>{darkTheme === true? <FaToggleOn/> : <FaToggleOff/> }</button>
             </div>
+
             <div className="flex flex-col justify-around items-center w-full mt-20">
-                <div className="flex flex-row justify-center items-center w-full">
-                    <img className="h-96 border-2 rounded-xl border-indigo-950" src="/images/cardPoster.png" alt="cardPhoto"></img>
-                    <div className={ darkTheme === true ? "flex flex-col justify-between h-96 items-start text-white w-1/3 ml-4" : "flex flex-col justify-between h-96 items-start text-black w-1/3 ml-4"}>
+                <div className="flex flex-row flex-wrap justify-center items-center w-full">
+                    <img className="h-96 border-2 rounded-xl border-indigo-950 mb-5" src="/images/cardPoster.png" alt="cardPhoto"></img>
+                    <div className={ darkTheme === true ? "flex flex-col justify-between h-96 items-start text-white w-3/3 ml-4 " : "flex flex-col justify-between h-96 items-start text-black w-3/3 ml-4"}>
                         <div className="flex flex-col items-start justify-start w-full">
                             <div className="flex flex-row w-full">
                                 <h1 className="text-2xl font-bold w-5/6">{data?.movie?.title}</h1>
@@ -66,16 +68,19 @@ function Movie() {
                         <p className="text-slate-500">Released on {data?.movie?.release_date}</p>
                     </div>
                 </div>
+
                 <div className={darkTheme === true ? "flex flex-col justify-center items-center bg-white p-10 border-2 border-white rounded-xl m-10 font-mono" : "flex flex-col justify-center items-center bg-black text-white p-10 border-2 border-black rounded-xl m-10 font-mono"}>
                     {data?.movie?.opening_crawl}
                 </div>
+
                 <div className="mt-20">
                     <p className={darkTheme === true? "text-3xl text-white font-bold" : "text-3xl text-black font-bold"}>Characters</p>
                 </div>
-                <div className="flex flex-row justify-around items-center flex-wrap w-full pt-8 border-t-2 border-slate-500">
+
+                <div className="flex flex-row flex-wrap justify-around items-center w-full pt-8 border-t-2 border-slate-500">
                     {
                         data?.movie?.characters?.map(actor => (
-                            <div className={darkTheme === true? "flex flex-col bg-white border-2 rounded-xl w-4/12 p-2 m-2 font-mono" : "flex flex-col bg-black text-white border-2 rounded-xl w-4/12 p-2 m-2 font-mono"} key={actor.name}>
+                            <div className={darkTheme === true? "flex flex-col bg-white border-2 rounded-xl w-full lg:w-4/12 p-2 m-2 font-mono" : "flex flex-col bg-black text-white border-2 rounded-xl w-full lg:w-4/12 p-2 m-2 font-mono"} key={actor.name}>
                                 <p className="font-semibold">{actor.name}</p>
                                 <p className="text-sm -mt-1 text-slate-600">{actor.gender}</p>
                                 <div className="flex flex-row justify-start items-start mt-5">
@@ -96,6 +101,7 @@ function Movie() {
                         ))
                     }
                 </div>
+
             </div>
         </div>
     

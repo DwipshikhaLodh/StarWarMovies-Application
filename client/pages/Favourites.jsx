@@ -23,7 +23,7 @@ function Favourites() {
         <div className="flex flex-col justify-start items-end">
             <button className={darkTheme === true? "text-xl text-white" : "text-xl text-black"} onClick={setTheme}>{darkTheme === true? <FaToggleOn/> : <FaToggleOff/> }</button>
         </div>
-        <div className="flex flex-row flex-wrap justify-center items-center">
+        <div className="flex flex-row flex-wrap justify-center items-center w-full mt-10">
             {
                 favMovieList.favouriteMovies.map((movie) => (
                     <MovieCard key={movie.title} movie={movie}/>

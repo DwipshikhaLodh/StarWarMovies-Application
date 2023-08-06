@@ -11,7 +11,7 @@ function MovieCard({movie}) {
     const favMovieList = useSelector((state) => state.addFavMovies)
 
     return (
-        <div className="flex flex-col flex-wrap justify-between items-start w-60 border border-sky-950 rounded-2xl bg-poster bg-cover text-white h-80 m-16 p-2">
+        <div className="flex flex-col flex-wrap justify-between items-start w-full lg:w-1/5 border border-sky-950 rounded-2xl bg-poster bg-cover text-white h-80 mb-10 lg:m-16 p-2 ">
                     
                     <div className="flex flex-col justify-start items-start w-full">
                         <p className="w-5/6 font-semibold text-lg ">{movie.title}</p>
